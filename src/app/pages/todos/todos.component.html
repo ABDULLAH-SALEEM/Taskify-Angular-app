@@ -1,0 +1,6 @@
+<div>
+    @for (todo of todos(); track todo.id) {
+    <app-todos-item [todo]="todo" (deleteTodo)="todoService.deleteTodoById(todo.id)"
+        (toggleComplete)="todoService.toggleTodoCompleteById(todo.id)"></app-todos-item>
+    }
+</div>

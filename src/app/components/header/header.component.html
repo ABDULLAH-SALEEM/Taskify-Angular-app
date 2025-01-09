@@ -1,0 +1,10 @@
+<header class="navbar">
+  <div class="navbar__logo">
+    <img [src]="logo" [width]="50" [height]="50" />
+    <span routerLink="/home" class="app-name">{{title()}}</span>
+  </div>
+  <ul class="navbar__links">
+    <li><a routerLink="/todo" routerLinkActive="active">Todos</a></li>
+    <button class="navbar__logout" (click)="logout()">Logout</button>
+  </ul>
+</header>

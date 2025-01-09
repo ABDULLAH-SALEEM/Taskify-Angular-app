@@ -1,0 +1,30 @@
+<div class="login-container">
+  <form class="login-form" (ngSubmit)="onSubmit()">
+    <h1 class="login-form__title">Login</h1>
+    <div class="login-form__field">
+      <app-textfield label="Email" type="email" placeholder="Enter your email" [control]="signInForm.get('email')"
+        [required]="true" [errorMessages]="{
+          required: 'Email is required.',
+          email: 'Please enter a valid email address.'
+        }"></app-textfield>
+    </div>
+    <div class="login-form__field">
+      <app-textfield label="Password" type="password" placeholder="Enter your password" [isPassword]="true"
+        [control]="signInForm.get('password')" [required]="true" [errorMessages]="{
+          required: 'Password is required.',
+          minlength: 'Password must be at least 6 characters long.'
+        }"></app-textfield>
+    </div>
+    <div class="login-form__forgot">
+      <a routerLink="/forgot-password">Forgot password?</a>
+    </div>
+    <app-loader-button title="Login" type="submit" />
+    <p>OR</p>
+    <button type="button" class="login-form__btn google-btn" (click)="loginWithGoogle()">
+      Login with Google
+    </button>
+    <div class="login-form__links">
+      Don't have an account? <a routerLink="/join">Join now</a>
+    </div>
+  </form>
+</div>

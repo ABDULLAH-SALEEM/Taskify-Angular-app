@@ -1,0 +1,48 @@
+<div class="signup-container">
+    <form class="signup-form" (ngSubmit)="onSubmit()">
+        <h1 class="signup-form__title">Join now</h1>
+        <div class="signup-form__field">
+            <app-textfield label="Name" placeholder="Enter your full name" [control]="signupForm.get('name')"
+                [required]="true" [errorMessages]="{
+                    required: 'Name is required.',
+                    maxlength: 'Name cannot exceed 100 characters.'
+                  }"></app-textfield>
+        </div>
+        <div class="signup-form__field">
+            <app-textfield label="Email" type="email" placeholder="Enter your email" [control]="signupForm.get('email')"
+                [required]="true" [errorMessages]="{
+                    required: 'Email is required.',
+                    email: 'Please enter a valid email address.'
+                  }"></app-textfield>
+        </div>
+        <div class="signup-form__field">
+            <app-textfield label="Password" [isPassword]="true" type="password" placeholder="Enter your password"
+                [control]="signupForm.get('password')" [required]="true" [errorMessages]="{
+                    required: 'Password is required.',
+                    minlength: 'Password must be at least 6 characters long.'
+                  }"></app-textfield>
+        </div>
+        <div class="signup-form__field">
+            <app-textfield [isPassword]="true" label="Confirm Password" type="password"
+                placeholder="Enter your password" [control]="signupForm.get('cnf_password')" [required]="true"
+                [errorMessages]="{
+                    required: 'Confirm Password is required.',
+                    minlength: 'Confirm Password must be at least 6 characters long.',
+                    passwordMatch: 'Passwords must match.'
+                  }"></app-textfield>
+        </div>
+        <div class="signup-form__forgot">
+            <a routerLink="/forgot-password">Forgot password?</a>
+        </div>
+        <app-loader-button title="Join" type="submit" />
+        <p>OR</p>
+        <button type="button" class="signup-form__btn google-btn" (click)="loginWithGoogle()">
+            Join with Google
+        </button>
+        <div class="signup-form__links">
+            Already have an account? <a routerLink="/">Login now</a>
+        </div>
+
+
+    </form>
+</div>
