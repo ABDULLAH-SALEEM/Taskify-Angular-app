@@ -20,9 +20,7 @@
     </div>
     <app-loader-button title="Login" type="submit" />
     <p>OR</p>
-    <button type="button" class="login-form__btn google-btn" (click)="loginWithGoogle()">
-      Login with Google
-    </button>
+    <app-google-login />
     <div class="login-form__links">
       Don't have an account? <a routerLink="/join">Join now</a>
     </div>

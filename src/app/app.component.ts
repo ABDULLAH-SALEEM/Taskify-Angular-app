@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
 
 // decorator
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent],
+  imports: [RouterOutlet],
   template: `
     <div style="max-width: 2000px; margin: auto;">
-      <app-header />
+      <!-- <app-header /> -->
       <main>
         <router-outlet />
       </main>

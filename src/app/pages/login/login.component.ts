@@ -8,10 +8,17 @@ import {
 import { TextfieldComponent } from '../../components/textfield/textfield.component';
 import { LoaderButtonComponent } from '../../components/loader-button/loader-button.component';
 import { RouterLink } from '@angular/router';
+import { GoogleLoginComponent } from '../../components/google-login/google-login.component';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule, TextfieldComponent, LoaderButtonComponent, RouterLink],
+  imports: [
+    FormsModule,
+    TextfieldComponent,
+    LoaderButtonComponent,
+    RouterLink,
+    GoogleLoginComponent,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })

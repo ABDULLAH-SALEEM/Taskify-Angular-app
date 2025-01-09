@@ -24,7 +24,7 @@
         </div>
         <div class="signup-form__field">
             <app-textfield [isPassword]="true" label="Confirm Password" type="password"
-                placeholder="Enter your password" [control]="signupForm.get('cnf_password')" [required]="true"
+                placeholder="Confirm your password" [control]="signupForm.get('cnf_password')" [required]="true"
                 [errorMessages]="{
                     required: 'Confirm Password is required.',
                     minlength: 'Confirm Password must be at least 6 characters long.',
@@ -36,9 +36,10 @@
         </div>
         <app-loader-button title="Join" type="submit" />
         <p>OR</p>
-        <button type="button" class="signup-form__btn google-btn" (click)="loginWithGoogle()">
+        <!-- <button type="button" class="signup-form__btn google-btn" (click)="loginWithGoogle()">
             Join with Google
-        </button>
+        </button> -->
+        <app-google-login />
         <div class="signup-form__links">
             Already have an account? <a routerLink="/">Login now</a>
         </div>
