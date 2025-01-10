@@ -1,5 +1,7 @@
 @use "../../../styles/variables" as vars;
-
+.primary {
+  color: vars.$primary-color;
+}
 .signup-container {
   display: flex;
   justify-content: center;

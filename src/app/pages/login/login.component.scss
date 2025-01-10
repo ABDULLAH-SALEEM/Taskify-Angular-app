@@ -1,5 +1,8 @@
 @use "../../../styles/variables" as vars;
 
+.primary {
+  color: vars.$primary-color;
+}
 .login-container {
   display: flex;
   justify-content: center;
