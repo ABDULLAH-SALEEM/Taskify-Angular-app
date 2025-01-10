@@ -1,0 +1,21 @@
+<div class="backdrop" *ngIf="!modalHidden" [class.fade-out]="animationClass === 'scale-out'">
+</div>
+<div class="modal" *ngIf="!modalHidden" [class]="animationClass">
+    <div class="modal-header">
+        <h2>{{ title }}</h2>
+    </div>
+    <div class="modal-body">
+        <div *ngIf="!hasChild">
+            <p>{{body}}</p>
+        </div>
+
+        <div *ngIf="hasChild">
+            <ng-content select="[modalBody]"></ng-content>
+        </div>
+
+    </div>
+    <div *ngIf="!hasChild" class="modal-footer">
+        <button class="btn cancel" (click)="onCancel()">{{ cancelButtonText }}</button>
+        <app-loader-button [loading]="false" [btnTitle]="confirmButtonText" (confirm)="onConfirm()" />
+    </div>
+</div>

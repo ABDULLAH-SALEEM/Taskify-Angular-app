@@ -34,11 +34,10 @@
         <div class="signup-form__forgot">
             <a routerLink="/forgot-password">Forgot password?</a>
         </div>
-        <app-loader-button title="Join" type="submit" />
+        <div style="margin-top: 1rem;">
+            <app-loader-button title="Join" type="submit" />
+        </div>
         <p>OR</p>
-        <!-- <button type="button" class="signup-form__btn google-btn" (click)="loginWithGoogle()">
-            Join with Google
-        </button> -->
         <app-google-login />
         <div class="signup-form__links">
             Already have an account? <a routerLink="/">Login now</a>

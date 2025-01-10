@@ -18,11 +18,19 @@
     <div class="login-form__forgot">
       <a routerLink="/forgot-password">Forgot password?</a>
     </div>
-    <app-loader-button title="Login" type="submit" />
+    <div style="margin-top: 1rem;">
+      <app-loader-button title="Login" type="submit" />
+    </div>
     <p>OR</p>
     <app-google-login />
     <div class="login-form__links">
       Don't have an account? <a routerLink="/join">Join now</a>
     </div>
   </form>
+  <!-- <button (click)="openModal()">Open Modal</button> -->
+
+  <app-modal [isOpen]="isModalOpen" title="Confirm Action" cancelButtonText="Close" confirmButtonText="Proceed"
+    body="Are you sure you want to proceed with this action?" (cancel)="handleCancel()" (confirm)="handleConfirm()" />
+
+
 </div>

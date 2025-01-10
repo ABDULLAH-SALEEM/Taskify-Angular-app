@@ -9,6 +9,7 @@ import { TextfieldComponent } from '../../components/textfield/textfield.compone
 import { LoaderButtonComponent } from '../../components/loader-button/loader-button.component';
 import { RouterLink } from '@angular/router';
 import { GoogleLoginComponent } from '../../components/google-login/google-login.component';
+import { ModalComponent } from '../../components/modal/modal.component';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +19,8 @@ import { GoogleLoginComponent } from '../../components/google-login/google-login
     LoaderButtonComponent,
     RouterLink,
     GoogleLoginComponent,
+    ModalComponent,
+    ModalComponent,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
@@ -40,5 +43,20 @@ export class LoginComponent {
   loginWithGoogle() {
     // Add Google login logic here
     console.log('Login with Google clicked');
+  }
+  isModalOpen = false;
+
+  openModal() {
+    this.isModalOpen = true;
+  }
+
+  handleCancel() {
+    this.isModalOpen = false;
+    console.log('Modal cancelled');
+  }
+
+  handleConfirm() {
+    this.isModalOpen = false;
+    console.log('Modal confirmed');
   }
 }

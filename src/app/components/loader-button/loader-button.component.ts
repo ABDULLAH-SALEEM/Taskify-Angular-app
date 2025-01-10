@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-loader-button',
@@ -9,8 +9,13 @@ import { Component, Input } from '@angular/core';
 })
 export class LoaderButtonComponent {
   @Input() loading: boolean = false;
-  @Input() title: string = '';
+  @Input() btnTitle: string = 'Confirm';
   @Input() loadingTitle: string = 'Loading....';
   @Input() type?: string = undefined;
-  @Input() onButtonClick?: () => void = undefined;
+
+  @Output() confirm = new EventEmitter<void>();
+
+  onButtonClick() {
+    this.confirm.emit();
+  }
 }
