@@ -32,7 +32,7 @@ export class GoogleLoginComponent implements OnInit, AfterViewInit {
     console.log(parentWidth);
     google.accounts.id.renderButton(document.getElementById('google-btn'), {
       size: 'large',
-      width: this.googleBtnWidth - 80,
+      width: this.googleBtnWidth,
       logo_alignment: 'center',
     });
   }
